@@ -1,0 +1,386 @@
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    text-transform: capitalize;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+html {
+    font-size: 62.5%;
+    overflow: visible;
+}
+
+body {
+    background-color: #eee;
+    display: block;
+  
+}
+#demo{
+    display: none;
+}
+.nav-bar{
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 12vh;
+    /* background-color: #ddbdd9; */
+    background-color: rgb(230, 150, 150);
+    position: fixed;
+    /* z-index: 1; */
+    border: 1px solid #ccc;
+}
+#menu{
+    height: 100%;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-items: center;
+    align-items: start;
+   
+}
+#menu-op a h5{
+
+   text-align: start;
+   margin-top: 5px;
+}
+ #btn{
+    background-color: rgb(230, 150, 150);
+    height: 30px;
+    width: 60px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+} 
+ 
+#btn i{
+    color: #222;
+    transform: scale(2);
+}
+div a img{
+    border: 1px solid rgb(207, 202, 202);
+    border-radius: 50%;
+    height:50px;
+    width: 50px;   
+    object-fit: cover; 
+}
+#menu-op a img:hover{
+   outline: 0.1rem solid #222;
+   outline-offset: 0; 
+   transform: scale(0.9);
+}
+/* Product container styles */
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    text-transform: capitalize;
+}
+
+html {
+    font-size: 62.5%;
+    overflow: visible;
+}
+
+body {
+    background-color: #eee;
+}
+
+.product-container {
+    padding-top: 11rem;
+    width: 80vw;
+    padding-left: 2vw;
+    padding-bottom: 5vw;
+}
+
+ .product {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 2rem;
+}
+
+ .products {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #fff;
+    /* height: 285px;
+    width: 270px; */
+    box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    outline: 0.1rem solid #ccc;
+    outline-offset: -1.5rem;
+    cursor: pointer;
+}
+.products:hover {
+    outline: 0.1rem solid #222;
+    outline-offset: 0;
+}
+.products img {
+    height: 20rem;
+    width: auto;
+    transition: transform 0.2s;
+}
+.products:hover img {
+    transform: scale(0.9);
+}
+.products h3{
+padding: 5px;
+font-size: 1.5rem;
+color: #444;
+}
+.products:hover h3{
+    color: green;
+}
+    
+.products .price{
+    font-size: 1.5rem;
+    color: #444;
+}
+.product-preview{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.preview{
+    display: none;
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+    margin: 2rem;
+    height: 386px;
+    width: 280px;
+}
+.preview.active{
+    display: inline-block;
+}
+.preview img{
+    height: 18rem;
+    width: 160px;
+}
+.preview .fa-times{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    cursor: pointer;
+    color: #444;
+    font-size: 2rem;
+}
+.preview .fa-times:hover{
+    transform: rotate(90deg);
+}
+.preview h3{
+    color: #444;
+    padding: 1rem ;
+    font-size: 1.5rem;
+}
+.starts{
+    font-size: 1.4rem;
+}
+.starts i{
+    color: #999;
+}
+.starts span{
+    color: #999;
+}
+.preview p{
+    line-height:1;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    color: #999;
+}
+.preview .price{
+    font-size: 1.6rem;
+    color: #27ae60;
+}
+.buttons{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+.buttons a{
+    flex:1 1 9rem;
+    padding: 5px;
+    font-size: 1.3rem;
+    color: #444;
+    text-decoration: none;
+    border: 1.4px solid #444;
+}
+.buttons a.cart:hover{
+    background-color: #111;
+}
+.buttons a.buy:hover{
+    background-color: #444;
+    color: #fff;
+}
+   
+ /* start of footer section */
+ .footer{
+    position: relative;
+    top: 10%;
+    bottom: 0;
+    height: 600px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+    align-items: start;
+    margin-top: 20px;
+    background-color: white;
+}
+.tha{
+   display: flex;
+   background-color: rgb(44, 44, 44);
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 20%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.tha div{
+    /* border: 2px solid black; */
+    margin: 10px;
+    position: absolute;
+}
+.than{
+    width: 30%;
+    left: 0px;
+    color: white;
+}
+.num{
+   right: 0px;
+    width: 60%;
+    color: white;
+}
+.emai{
+    display: block;
+    position: absolute;
+    top: 20%;
+    background-color: rgb(239, 238, 241);
+    width: 100vw;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+.follow{
+    background-color: rgb(239, 238, 241);
+    /* border: 2px solid black; */
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.follow div{
+/* border: 2px solid black; */
+color: black;
+width: auto;
+}
+.follow div p{
+text-align: start;
+}
+.follow div p a{
+   text-decoration: none;
+   color: black;
+}
+.pp{
+    margin-top: 10px;
+}
+.pp a{
+    font-size: 15px;
+}
+.last{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    width: 100vw;
+    bottom: 0;
+    background-color: white;
+    justify-content: space-around;
+}
+.last div{
+    /* border: 2px solid black; */
+    margin-top: 20px;
+    text-align: start;
+    margin-bottom: 20px;
+}
+.last div p{
+    text-align: start;
+    margin-top: 5px;
+}
+.last-head div{
+    font-size: 15px;
+    font-weight: bold;
+}
+.headd a{
+    font-size: 15px;  
+    font-weight: bold;
+}
+.last-head p a{
+ text-decoration: none;
+color: rgb(81, 83, 83);
+font-size: 14px;
+}
+ /* footer media */
+ 
+ @media (min-width: 150px)  and (max-width:729px){
+
+    .headd{
+        visibility: hidden;
+    }
+    .emai{
+        height: 80%;
+        bottom: 0%;
+    }
+   
+    .last{
+        display: none;
+        position: relative;
+    }
+    .follow{
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: normal;
+    justify-content: flex-start;
+    top:0px;
+    }
+    .follow div{
+    width: auto;
+    }
+}
+ /*  */
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width:768px){
+    .preview img{
+        height:27rem;
+    }
+}
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="ecommerce.css">
+        
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+     
+    <style>
+ *{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color:white;
+    z-index: 1; 
+}
+
+ .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 1150px;
+    background-color:white;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1; 
+}
+ .nav-bar .sidebarOpen{
+    color:black;
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+    
+}
+ .nav-bar .logo img{
+    height: 70px;
+    
+}
+.menu .logo-toggle{
+    display: none;
+    color: black;
+}
+ .nav-links{
+    display: flex;
+    align-items: center;
+}
+ .nav-links li{
+    margin: 0 5px;
+    margin-top: 10px;
+    list-style: none;
+}
+.nav-links li a{
+    position: relative;
+    font-size: 17px;
+    color:black;
+    text-decoration: none;
+    padding: 18px;
+    font-weight: bold;
+}
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 11px;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color:black;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.nav-links li:hover a::before{
+    opacity: 1;
+}
+ .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+ .searchToggle{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 40px;
+}
+.searchToggle i{
+    position: absolute;
+    color:black;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+.searchToggle i.cancel{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchToggle.active i.cancel{
+    opacity: 1;
+    pointer-events: auto;
+}
+.searchToggle.active i.search{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchBox{
+    position: relative;
+}
+ .search-field{
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color:#E4E9F7 ;
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.searchToggle.active ~ .search-field{
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+ .search-field::before{
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: white;
+    transform: rotate(-45deg);
+    z-index: -1;
+} 
+.search-field input{
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    color:#010718;
+    background-color:white ;
+}
+.dark.search-field input{
+    color:#010718;
+}
+.search-field i{
+    position: absolute;
+    color:black;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+.dark.search-field i{
+    color:#010718 ;
+}
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color:white;
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+    nav.active .menu{
+        left: -0%;
+    }
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo-toggle .siderbarClose{
+        color: black;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+    
+}
+.account a{
+    font-size: 17px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.wishlist a{
+    font-size: 17px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.cart a{
+    font-size: 17px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+ /* product-section */
+.container{
+    margin-top: 20px;
+}
+        .custom-card {
+            border: 1px solid #ddd;
+            width: 100%;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .custom-card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .custom-card h5 {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .custom-card p {
+            color: green;
+            font-weight: bold;
+        }
+        .product-section {
+            background-color: #f8d7da;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .product-section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .footer{
+           height: 50px;
+           width: 100%;
+           background-color: gray;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i> 
+            <span class="logo"><img src="logo.jpeg"></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                   <i class='bx bx-x siderbarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Content</a></li>
+                </ul>
+            </div>
+            <div class="darkLight-searchBox">
+                
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+                    <div class="search-field">
+                        <input type="text" placeholder="Search for styles...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+                </div>
+            <div class="account">
+              <i class="fa-solid fa-user"></i> <a href="#account"> Account</a>
+            </div>
+            <div class="wishlist">
+              <i class="fa-regular fa-heart"></i> <a href="#wishlist"> Wishlist</a>
+            </div>
+            <div class="cart">
+              <i class="fa-solid fa-cart-plus"></i><a href="#cart"> Cart</a>
+            </div> 
+        </div>
+    </nav>
+
+    <!-- product-section -->
+
+    <div class="container">
+        <div class="product-section">
+            <div class="product-section-title">Men's Footwear</div>
+            <div class="row">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="custom-card">
+                        <img src="image2.jpeg" alt="Product 1">
+                        <h5>Men's Slippers & Flip Flops</h5>
+                        <p>Min. 70% Off</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="custom-card">
+                        <img src="image2.jpeg" alt="Product 2">
+                        <h5>Men's Sandals & Floaters</h5>
+                        <p>Min. 70% Off</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="custom-card">
+                        <img src="image2.jpeg" alt="Product 3">
+                        <h5>Men's Sports Shoes</h5>
+                        <p>Min. 70% Off</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="custom-card">
+                        <img src="image2.jpeg" alt="Product 4">
+                        <h5>Laptop Bags</h5>
+                        <p>Min. 70% Off</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-section">
+            <div class="product-section-title">Home Decor</div>
+            <div class="row">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="custom-card">
+                        <img src="image2.jpeg" alt="Product 5">
+                        <h5>Bed Sheets</h5>
+                        <p>New Arrival</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="custom-card">
+                        <img src="image2.jpeg" alt="Product 6">
+                        <h5>Cups & Mugs</h5>
+                        <p>Special Offer</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="custom-card">
+                        <img src="image2.jpeg" alt="Product 7">
+                        <h5>Blankets</h5>
+                        <p>Min. 50% Off</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="custom-card">
+                        <img src="image2.jpeg" alt="Product 8">
+                        <h5>Pressure Cookers</h5>
+                        <p>Min. 40% Off</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div> 
+</body>
+</html>
