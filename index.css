@@ -17,7 +17,7 @@ nav{
     left: 0;
     height: 70px;
     width: 100%;
-    background-color:white;
+    background-color:rgb(216, 165, 120);
     z-index: 1; 
 }
 
@@ -25,7 +25,7 @@ nav{
     position: relative;
     height: 100%;
     max-width: 1150px;
-    background-color:white;
+    background-color:rgb(216, 165, 120);
     margin: 0 auto;
     padding: 0 10px;
     display: flex;
@@ -43,7 +43,7 @@ nav{
 }
  .nav-bar .logo img{
     height: 70px;
-    
+    width: 100px;
 }
 .menu .logo-toggle{
     display: none;
